@@ -14,6 +14,10 @@
 <meta property="og:description" content="IM Education: 20+ years, 30,000+ alumni, campuses in Barcelona and Madrid, university partnerships and QS Stars recognition.">
 <meta property="og:image" content="https://www.im.education/upload/files/web/2525-logo-im.png">
 <meta property="og:type" content="education">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5Z9KR4Z');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -211,6 +215,7 @@ footer .logo img{height:40px;margin-bottom:14px}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z9KR4Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
   <div class="wrap topline">
     <a href="https://campus.im.education/">Virtual Campus</a>
@@ -321,5 +326,25 @@ footer .logo img{height:40px;margin-bottom:14px}
     </div>
   </div>
 </footer>
+<div id="cookie-banner" hidden style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--dark-2);color:#ddd;border-top:1px solid #2a2a2a;padding:18px 24px;font-size:14px">
+  <div class="wrap" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+    <p style="max-width:640px;margin:0">We use cookies for analytics and advertising measurement. You can accept or reject them — the site works either way. <a href="https://www.im.education/politica-de-cookies/" style="text-decoration:underline">Cookie policy</a></p>
+    <div style="display:flex;gap:10px">
+      <button class="btn" id="ck-accept" style="padding:10px 20px">Accept all</button>
+      <button class="btn btn-ghost" id="ck-reject" style="padding:10px 20px">Reject</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='im_consent', saved=null;
+  try{ saved = localStorage.getItem(KEY); }catch(e){}
+  function grant(){ gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}); }
+  if(saved==='granted'){ grant(); }
+  else if(saved!=='denied'){ document.getElementById('cookie-banner').hidden=false; }
+  document.getElementById('ck-accept').addEventListener('click',function(){ grant(); try{localStorage.setItem(KEY,'granted');}catch(e){} document.getElementById('cookie-banner').hidden=true; });
+  document.getElementById('ck-reject').addEventListener('click',function(){ try{localStorage.setItem(KEY,'denied');}catch(e){} document.getElementById('cookie-banner').hidden=true; });
+})();
+</script>
 </body>
 </html>
