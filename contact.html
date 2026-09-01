@@ -275,6 +275,9 @@ footer .logo img{height:40px;margin-bottom:14px}
       <h2 style="margin-bottom:22px">Or leave your details</h2>
       
 <form id="lead-form">
+  <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+    <label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
   <div class="field"><label for="f-name">Full name</label><input id="f-name" name="nombre" required autocomplete="name"></div>
   <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" required autocomplete="email"></div>
   <div class="field"><label for="f-phone">Phone (with country code)</label><input id="f-phone" type="tel" name="telefono" required autocomplete="tel" placeholder="+44 ..."></div>
@@ -302,10 +305,25 @@ var CRM_CONFIG = {
     utm_medium: "web"
   }
 };
+var __formLoadedAt = Date.now();
 document.getElementById("lead-form").addEventListener("submit", function(e){
   e.preventDefault();
   var f = e.target, btn = document.getElementById("lead-btn");
   var sel = document.getElementById("f-prog");
+  // --- anti-spam gate ---
+  var nombreVal = f.nombre.value.trim();
+  var digits = (f.telefono.value.match(/\d/g) || []).length;
+  var honeypot = f.website && f.website.value !== "";
+  var tooFast = (Date.now() - __formLoadedAt) < 4000;
+  var hasUrl = /https?:\/\/|www\./i.test(nombreVal + " " + f.email.value);
+  var badName = nombreVal.replace(/[^a-zA-Z\u00C0-\u024F ]/g, "").replace(/ /g, "").length < 2;
+  if (honeypot || tooFast || hasUrl || badName || digits < 7) {
+    btn.textContent = "Sent";
+    document.getElementById("lead-ok").hidden = false;
+    f.querySelectorAll("input,select").forEach(function(el){ el.disabled = true; });
+    return;
+  }
+  // --- end anti-spam ---
   var params = new URLSearchParams(CRM_CONFIG.fixed);
   params.set("id_curso", sel.value);
   params.set("nombre", f.nombre.value.trim());
