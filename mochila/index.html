@@ -384,7 +384,7 @@ const CONFIG = {
   precioUnidad: 36.30,        // € por mochila, IVA incluido (30 € + 21% IVA)
   precioOriginalUnidad: 72.60, // € precio normal IVA incl. (tachado)
   envio: 6,                   // € envío a domicilio por pedido
-  stock: 50,                  // unidades totales (el disponible real lo da el Apps Script)
+  stock: 59,                  // unidades totales (el disponible real lo da el Apps Script)
   maxUnidades: 1,             // 1 por pedido (enlace de Revolut de importe fijo)
   pagoBcn: 'https://checkout.revolut.com/pay/5cb2279a-dfd0-45e2-a171-95df592fc7de',   // Revolut · recogida Barcelona (36,30 €)
   pagoEnvio: 'https://checkout.revolut.com/pay/9fbd7bce-df97-47d8-818a-35d94015549a', // Revolut · envío a domicilio (42,30 €)
@@ -424,7 +424,7 @@ function aplicarStock(disp){
     document.querySelectorAll('a[href="#pedir"]').forEach(a => a.textContent = 'Agotadas');
     return;
   }
-  const t = disp <= 10 ? `¡Solo quedan <b>${disp}</b>!` : `Quedan <b>${disp}</b> de ${CONFIG.stock}`;
+  const t = disp <= 15 ? `🔥 ¡Últimas <b>${disp}</b> mochilas!` : `Quedan <b>${disp}</b> de ${CONFIG.stock}`;
   $('stockHero').innerHTML = t; $('quedan').innerHTML = t;
   maxPedido = Math.min(CONFIG.maxUnidades, disp);
   if (cant > maxPedido) cant = maxPedido;
