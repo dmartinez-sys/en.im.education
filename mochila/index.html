@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mochila IM · Comunidad IM</title>
+<meta name="description" content="Mochila oficial IM × Samsonite para alumnos, exalumnos y profesores de IM, al 50% de su precio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D0D0D; --ink-2:#1A1A1A; --turq:#00C4A0; --turq-d:#00A386; --gold:#F5C842;
+  --bg:#FFFFFF; --soft:#F5F6F5; --line:#E4E6E5; --muted:#5F6664; --err:#C0392B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{background:var(--ink);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--turq)}
+.logo img{height:30px;width:auto;display:block}
+.tag{font-size:13px;font-weight:600;color:var(--gold)}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;padding:40px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(32px,4.2vw,50px);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--turq)}
+.lead{font-size:18px;color:#C9CFCD;max-width:480px;margin-bottom:28px}
+.price{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+.hero-ship{color:#8A918F;font-size:15px;margin-bottom:28px}
+.cta2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin-top:22px}
+.cta{display:block;text-decoration:none;border-radius:12px;padding:14px 18px;background:var(--turq);color:var(--ink);transition:transform .15s,background .15s}
+.cta:hover{background:#19D9B4}
+.cta.alt{background:transparent;color:#fff;border:1.5px solid #3A3F3D}
+.cta.alt:hover{border-color:var(--turq);background:rgba(0,196,160,.08)}
+.cta small{display:block;font-size:13px;font-weight:600;opacity:.8}
+.cta b{display:flex;justify-content:space-between;align-items:baseline;font-size:22px;font-weight:800;margin-top:2px}
+.cta em{font-style:normal;font-size:14px;font-weight:700}
+.opt.big{padding:18px}
+.opt.big b{font-size:17px}
+.opt.big .pr{font-size:20px;font-weight:800}
+.paybox{border:2px solid var(--gold);background:#FFFBEA;border-radius:16px;padding:22px;margin:18px auto 0;max-width:520px;text-align:left}
+.paybox .lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A6200}
+.paybox .code{display:flex;align-items:center;gap:12px;margin:8px 0 14px;flex-wrap:wrap}
+.paybox .code span{font-family:ui-monospace,Menlo,monospace;font-size:34px;font-weight:800;letter-spacing:.06em}
+.paybox ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+.paybox .warn{margin-top:14px;font-size:14px;color:#5A4A00}
+.done .btn.pay{margin-top:20px;font-size:17px;padding:18px 28px}
+.price .now{font-size:44px;font-weight:800;letter-spacing:-.02em}
+.price .iva{font-size:14px;color:#8A918F;margin-left:-8px}
+.price .was{font-size:20px;color:#8A918F;text-decoration:line-through}
+.price .off{font-size:14px;font-weight:700;background:var(--turq);color:var(--ink);padding:4px 10px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:700;font-size:16px;border:0;border-radius:10px;padding:16px 28px;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s}
+.btn-primary{background:var(--turq);color:var(--ink)}
+.btn-primary:hover{background:#19D9B4}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.hero-note{margin-top:16px;font-size:14px;color:#C9CFCD}
+.stock{display:inline-flex;align-items:center;gap:8px}
+.stock::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.hero-img{aspect-ratio:1/1;border-radius:24px;background:radial-gradient(circle at 50% 40%,#2A2A2A,#141414);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.gallery{min-width:0}
+.thumbs{display:flex;gap:10px;margin-top:12px}
+.thumbs button{flex:1;max-width:96px;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:2px solid transparent;padding:0;background:#1A1A1A;cursor:pointer;opacity:.6;transition:opacity .15s,border-color .15s}
+.thumbs button[aria-current=true]{border-color:var(--turq);opacity:1}
+.thumbs button:hover{opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img .ph{color:#6B7270;font-size:14px;text-align:center;padding:20px}
+.badge-brand{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.95);color:var(--ink);font-weight:700;font-size:13px;padding:8px 12px;border-radius:8px}
+
+/* Perks */
+.perks{padding:56px 0;border-bottom:1px solid var(--line)}
+.perks .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.perk h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.perk p{color:var(--muted);font-size:15px}
+.perk .ic{width:40px;height:40px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--turq-d)}
+
+/* Steps */
+section.block{padding:72px 0}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin-bottom:10px}
+.sub{color:var(--muted);margin-bottom:36px;max-width:560px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--soft);border-radius:16px;padding:24px}
+.step b{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font-size:14px;margin-bottom:14px}
+.step h3{font-size:17px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+
+/* Producto */
+.producto{border-bottom:1px solid var(--line)}
+.prod-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--turq-d);margin-bottom:12px}
+.specs{display:flex;gap:12px;flex-wrap:wrap}
+.specs div{background:var(--ink);color:#fff;border-radius:12px;padding:14px 18px;min-width:110px}
+.specs b{display:block;font-size:22px;font-weight:800;color:var(--gold)}
+.specs span{font-size:13px;color:#C9CFCD}
+.feats{list-style:none;display:grid;gap:4px}
+.feats li{display:grid;grid-template-columns:28px 1fr;column-gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.feats li:last-child{border-bottom:0}
+.feats li::before{content:"";grid-row:span 2;width:22px;height:22px;border-radius:50%;margin-top:1px;background:var(--turq) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D0D0D' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.feats b{font-size:16px}
+.feats span{color:var(--muted);font-size:15px}
+/* Form */
+#pedir{background:var(--soft)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px;max-width:760px;margin:0 auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.full{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input,select{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .15s}
+input:focus,select:focus{outline:none;border-color:var(--turq)}
+input.bad,select.bad{border-color:var(--err)}
+.hint{font-size:13px;color:var(--muted);margin-top:5px}
+.errmsg{font-size:13px;color:var(--err);margin-top:5px;display:none}
+.bad + .errmsg,.bad ~ .errmsg{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--muted)}
+.check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--turq-d)}
+.hp{position:absolute;left:-9999px}
+.form-foot{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.alert{background:#FDECEA;color:var(--err);border-radius:10px;padding:12px 14px;font-size:14px;margin-top:16px;display:none}
+.ship{display:flex;gap:10px;align-items:center;background:#FFF8DB;border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:24px}
+
+.qty{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;width:max-content}
+.qty button{font:inherit;font-size:20px;width:46px;height:48px;border:0;background:none;cursor:pointer;color:var(--ink)}
+.qty button:disabled{color:#C5CAC8;cursor:default}
+.qty output{min-width:40px;text-align:center;font-weight:700;font-size:17px}
+.summary{background:var(--soft);border-radius:12px;padding:16px 18px;font-size:15px}
+.summary div{display:flex;justify-content:space-between;padding:3px 0}
+.summary .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:9px;font-weight:800;font-size:17px}
+#dniBox{display:none}
+.copy{font:inherit;font-size:13px;font-weight:600;background:none;border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;margin-left:8px;vertical-align:middle}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;font-weight:400;margin:0;transition:border-color .15s,background .15s}
+.opt:has(input:checked){border-color:var(--turq);background:#F0FCF9}
+.opt input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--turq-d)}
+.opt b{display:block;font-size:15px}
+.opt small{color:var(--muted);font-size:13px}
+.opt .pr{margin-left:auto;font-weight:700;white-space:nowrap}
+.opts.row{grid-template-columns:1fr 1fr 1fr}
+.opts.bad .opt{border-color:var(--err)}
+fieldset{border:0;min-width:0}
+legend{font-size:14px;font-weight:600;margin-bottom:8px}
+#addr{display:contents}
+#addr[hidden]{display:none}
+.sold{display:none;text-align:center;padding:24px 0}
+/* Success */
+.done{display:none;text-align:center}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--turq);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.ref{display:inline-block;font-size:26px;font-weight:800;letter-spacing:.04em;background:var(--ink);color:var(--gold);padding:10px 20px;border-radius:10px;margin:14px 0 8px}
+.done p{color:var(--muted);max-width:480px;margin:0 auto 10px}
+.done .btn{margin-top:18px}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:'+';color:var(--turq-d);font-size:22px;line-height:1}
+details[open] summary::after{content:'–'}
+details p{color:var(--muted);margin-top:10px}
+
+footer{background:var(--ink);color:#8A918F;font-size:13px;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .gallery{order:-1;max-width:460px;width:100%;margin:0 auto}
+  .perks .wrap,.steps,.prod-grid{grid-template-columns:1fr}
+  .prod-grid{gap:28px}
+}
+@media (max-width:560px){
+  .grid,.opts.row,.cta2{grid-template-columns:1fr}
+  .form-card{padding:22px 18px}
+  .btn{width:100%}
+  section.block{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="https://www.im.education"><img src="../logo-im.png" alt="IM Education" height="30" onerror="this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:'IM<span>.</span>education'}))"></a>
+    <span class="tag">Comunidad IM</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Comunidad IM · 50% dto.</span>
+      <h1>La mochila <em>IM</em> que te acompaña a clase, a la oficina y de viaje.</h1>
+      <p class="lead">Mochila oficial IM × <b data-cfg="marca"></b> GuardIT para portátil de 15,6", a mitad de precio para alumnos, exalumnos y profesores. Recógela en la sede o te la enviamos a casa.</p>
+      <div class="price">
+        <span class="now" data-cfg="precio"></span><span class="iva">IVA incl.</span>
+        <span class="was" data-cfg="precioOriginal"></span>
+        <span class="off">-50%</span>
+      </div>
+      <div class="cta2">
+        <a href="#pedir" class="cta" data-entrega="bcn"><small>Recogida en sede Barcelona</small><b><span data-cfg="totBcn"></span> <em>Comprar →</em></b></a>
+        <a href="#pedir" class="cta alt" data-entrega="envio"><small>Envío a domicilio · España</small><b><span data-cfg="totEnvio"></span> <em>Comprar →</em></b></a>
+      </div>
+      <p class="hero-note"><span class="stock" id="stockHero">Edición limitada: <b data-cfg="stock"></b> unidades</span></p>
+    </div>
+    <div class="gallery">
+      <div class="hero-img" id="heroImg">
+        <span class="badge-brand" data-cfg="marca"></span>
+        <img id="mainImg" alt="">
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </div>
+</section>
+
+<section class="perks">
+  <div class="wrap">
+    <div class="perk">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg></div>
+      <h3>Calidad <span data-cfg="marca"></span></h3>
+      <p>Modelo GuardIT con el logo de IM bordado. Solo <span data-cfg="stock"></span> unidades.</p>
+    </div>
+    <div class="perk">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L2 12V2h10l8.6 8.6a2 2 0 010 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></div>
+      <h3>Mitad de precio</h3>
+      <p>IM asume el 50% del coste para alumnos, exalumnos y profesores.</p>
+    </div>
+    <div class="perk">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11" rx="1"/><path d="M15 10h4l4 4v3h-8"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="18" cy="18.5" r="1.8"/></svg></div>
+      <h3>Recogida o envío</h3>
+      <p>Gratis en la sede de Barcelona, o a domicilio en España por <span data-cfg="envioTxt"></span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block producto">
+  <div class="wrap">
+    <div class="prod-grid">
+      <div>
+        <span class="kicker">IM × <span data-cfg="marca"></span> GuardIT</span>
+        <h2>Diseñada para el día a día: clase, oficina y viaje.</h2>
+        <p class="sub">La mochila oficial de la comunidad IM, de <span data-cfg="marca"></span>. Líneas limpias en negro con detalles en rojo y el logo de IM bordado en el frontal. Tiene sitio para el portátil, la tablet y todo lo que llevas encima.</p>
+        <div class="specs">
+          <div><b>15,6"</b><span>Portátil</span></div>
+          <div><b>Cabina</b><span>Apta para avión</span></div>
+          <div><b data-cfg="stock"></b><span>Unidades</span></div>
+        </div>
+      </div>
+      <ul class="feats">
+        <li><b>Portátil y tablet protegidos</b><span>Compartimento acolchado para portátil de hasta 15,6" y bolsillo forrado para la tablet.</span></li>
+        <li><b>Todo ordenado</b><span>Bolsillo frontal vertical con cremallera, organizador para bolígrafos y objetos pequeños, y bolsillo para documentos.</span></li>
+        <li><b>Comodidad todo el día</b><span>Espalda acolchada y tirantes ergonómicos regulables.</span></li>
+        <li><b>Lista para viajar</b><span>Apta como equipaje de cabina, con banda trasera para llevarla sobre el trolley y bolsillos laterales de malla para la botella.</span></li>
+        <li><b>Hecha para durar</b><span>Poliéster resistente y la calidad <span data-cfg="marca"></span> de siempre.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Cómo pedirla</h2>
+    <p class="sub">Tres pasos. Tarda menos de dos minutos.</p>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Rellena tus datos</h3><p>Unidades, forma de entrega y tus datos de contacto.</p></div>
+      <div class="step"><b>2</b><h3>Paga con Revolut</h3><p>Te damos un código de referencia: escríbelo en el pago.</p></div>
+      <div class="step"><b>3</b><h3>Recógela o recíbela</h3><p>Validamos el pago y te la entregamos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pedir">
+  <div class="wrap">
+    <div class="form-card">
+
+      <div class="sold" id="sold">
+        <h2>Agotadas</h2>
+        <p class="sub" style="margin:0 auto">Se han reservado las <span data-cfg="stock"></span> mochilas. Gracias a todos por la acogida.</p>
+      </div>
+
+      <form id="form" novalidate>
+        <h2>Solicita tu mochila</h2>
+        <p class="sub" style="margin-bottom:24px"><b data-cfg="precio"></b> por mochila (IVA incluido) · <span id="quedan">Edición limitada de <span data-cfg="stock"></span> unidades</span></p>
+
+        <div class="grid">
+          <fieldset class="full"><legend>Soy…</legend>
+            <div class="opts row" id="vinculoOpts">
+              <label class="opt"><input type="radio" name="vinculo" value="alumno"><span><b>Alumno/a</b><small>Estudio en IM</small></span></label>
+              <label class="opt"><input type="radio" name="vinculo" value="exalumno"><span><b>Exalumno/a</b><small>He estudiado en IM</small></span></label>
+              <label class="opt"><input type="radio" name="vinculo" value="profesor"><span><b>Profesor/a</b><small>Doy clase en IM</small></span></label>
+            </div><div class="errmsg">Elige una opción</div>
+          </fieldset>
+
+          <div hidden><label>Unidades</label>
+            <div class="qty"><button type="button" id="menos" aria-label="Quitar una">−</button><output id="cantOut">1</output><button type="button" id="mas" aria-label="Añadir una">+</button></div>
+            <input type="hidden" name="cantidad" id="cantidad" value="1">
+            <div class="hint" id="maxHint">Máximo <span data-cfg="max"></span> por persona</div></div>
+
+          <fieldset class="full"><legend>¿Cómo la quieres?</legend>
+            <div class="opts" id="entregaOpts">
+              <label class="opt big"><input type="radio" name="entrega" value="bcn"><span><b>Recogida en la sede de Barcelona</b><small>Sin gastos de envío · te avisamos cuando esté lista</small></span><span class="pr" data-cfg="totBcn"></span></label>
+              <label class="opt big"><input type="radio" name="entrega" value="envio"><span><b>Envío a domicilio en España</b><small>Incluye <span data-cfg="envioTxt"></span> de envío · solo direcciones de España</small></span><span class="pr" data-cfg="totEnvio"></span></label>
+            </div><div class="errmsg">Elige cómo quieres recibirla</div>
+          </fieldset>
+          <div class="summary full" id="summary" hidden></div>
+
+          <div><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="given-name"><div class="errmsg">Indica tu nombre</div></div>
+          <div><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" autocomplete="family-name"><div class="errmsg">Indica tus apellidos</div></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"><div class="errmsg">Email no válido</div></div>
+          <div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="6XX XXX XXX"><div class="errmsg">Teléfono no válido</div></div>
+
+          <div class="full"><label class="check"><input type="checkbox" id="factura"><span>Necesito factura a mi nombre</span></label></div>
+          <div class="full" id="dniBox"><label for="dni">DNI / NIE</label><input id="dni" name="dni" autocomplete="off" placeholder="12345678Z"><div class="errmsg">DNI/NIE no válido</div></div>
+
+          <div id="addr">
+            <div class="full ship" style="margin:4px 0 0" id="addrNote"></div>
+            <div class="full"><label for="direccion" id="dirLabel">Dirección</label><input id="direccion" name="direccion" autocomplete="street-address" placeholder="Calle, número, piso, puerta"><div class="errmsg">Indica la dirección completa</div></div>
+            <div><label for="cp">Código postal</label><input id="cp" name="cp" inputmode="numeric" maxlength="5" autocomplete="postal-code"><div class="errmsg">CP español de 5 cifras</div></div>
+            <div><label for="ciudad">Ciudad</label><input id="ciudad" name="ciudad" autocomplete="address-level2"><div class="errmsg">Indica la ciudad</div></div>
+            <div class="full"><label for="provincia">Provincia</label><select id="provincia" name="provincia"><option value="">Se rellena con el CP</option></select><div class="errmsg">Selecciona la provincia</div></div>
+          </div>
+
+          <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="full"><label class="check"><input type="checkbox" id="alumno"><span>Confirmo que soy alumno/a, exalumno/a o profesor/a de IM Education.</span></label><div class="errmsg">Obligatorio</div></div>
+          <div class="full"><label class="check"><input type="checkbox" id="rgpd"><span>Acepto que Instituto Internacional de Marketing y Negocios, S.L. trate mis datos para gestionar el pedido y la entrega. <a href="https://www.im.education/politica-de-privacidad" target="_blank" rel="noopener">Política de privacidad</a>.</span></label><div class="errmsg">Debes aceptar para continuar</div></div>
+        </div>
+
+        <div class="alert" id="alert"></div>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit" id="submit">Reservar mi mochila</button>
+        </div>
+      </form>
+
+      <div class="done" id="done">
+        <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <h2 id="doneTitle">¡Reservada! Ahora, el pago</h2>
+        <div class="paybox">
+          <div class="lbl">Tu código de referencia</div>
+          <div class="code"><span id="ref">MOCH-0000</span><button class="copy" id="copyRef" type="button">Copiar</button></div>
+          <ol>
+            <li>Pulsa el botón de pago: <b>copiamos tu código automáticamente</b>.</li>
+            <li>En Revolut, <b>pega el código en el campo de referencia / nota</b> del pago.</li>
+            <li>Completa el pago de <b id="doneTotal"></b>.</li>
+          </ol>
+          <p class="warn">⚠️ Sin el código no podemos asignar tu pago a tu pedido.</p>
+        </div>
+        <a class="btn btn-primary pay" id="payBtn" target="_blank" rel="noopener">Copiar código y pagar →</a>
+        <p class="hint" style="margin-top:14px" id="doneNext">Te hemos enviado un email con el código y el enlace de pago.</p>
+        <button type="button" class="copy" id="otra" style="margin-top:22px;padding:10px 16px">+ Pedir otra mochila</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap" style="max-width:760px">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Quién puede pedirla?</summary><p>Alumnos, exalumnos y profesores de IM Education. Podemos verificarlo con tus datos antes de la entrega.</p></details>
+    <details><summary>¿Cuántas hay?</summary><p>Es una edición limitada de <span data-cfg="stock"></span> unidades. Se reservan por orden de solicitud; si una reserva no se paga, la unidad vuelve a estar disponible.</p></details>
+    <details><summary>¿Dónde puedo recogerla?</summary><p>En la sede de Barcelona, sin coste. También te la podemos enviar a casa por <span data-cfg="envioTxt"></span>.</p></details>
+    <details><summary>¿Envían fuera de España?</summary><p>No. Por logística, solo enviamos a direcciones de España (península, Baleares, Canarias, Ceuta y Melilla).</p></details>
+    <details><summary>¿Puedo pedir más de una?</summary><p>Sí. Cada pedido es de una mochila: cuando termines, pulsa «Pedir otra mochila» y repite el proceso con su pago.</p></details>
+    <details><summary>¿Puedo tener factura?</summary><p>Sí. Marca «Necesito factura» e indica tu DNI/NIE y dirección de facturación. Te la enviaremos por email una vez confirmado el pago.</p></details>
+    <details><summary>¿Cómo se paga?</summary><p>Con el enlace de pago seguro de Revolut que verás al reservar. Puedes pagar con tarjeta aunque no tengas cuenta Revolut. Escribe tu código de referencia (MOCH-XXXX) en el campo de referencia o nota del pago.</p></details>
+    <details><summary>Me he equivocado en un dato</summary><p>Responde al email de confirmación indicando tu código de referencia y lo corregimos.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© IM Education · Instituto Internacional de Marketing y Negocios, S.L.</span>
+    <a href="https://www.im.education">im.education</a>
+  </div>
+</footer>
+
+<script>
+/* ======== CONFIGURACIÓN — cambia solo esto ======== */
+const CONFIG = {
+  marca: 'Samsonite',
+  precioUnidad: 36.30,        // € por mochila, IVA incluido (30 € + 21% IVA)
+  precioOriginalUnidad: 72.60, // € precio normal IVA incl. (tachado)
+  envio: 6,                   // € envío a domicilio por pedido
+  stock: 50,                  // unidades totales (el disponible real lo da el Apps Script)
+  maxUnidades: 1,             // 1 por pedido (enlace de Revolut de importe fijo)
+  pagoBcn: 'https://checkout.revolut.com/pay/5cb2279a-dfd0-45e2-a171-95df592fc7de',   // Revolut · recogida Barcelona (36,30 €)
+  pagoEnvio: 'https://checkout.revolut.com/pay/9fbd7bce-df97-47d8-818a-35d94015549a', // Revolut · envío a domicilio (42,30 €)
+  imagenes: [                 // galería (rutas relativas a esta página)
+    { src: 'img/frontal.webp', alt: 'Mochila IM, vista frontal con el logo de IM bordado' },
+    { src: 'img/espalda.webp', alt: 'Espalda acolchada con banda para trolley' },
+    { src: 'img/marca.webp', alt: 'Etiqueta interior: developed by Samsonite' }
+  ],
+  endpoint: 'https://script.google.com/macros/s/AKfycbw1XnAAIRrlEXNIXEc5sdQC0rrOqiBCVjnrhmiootJcst8Uzqcut15bLkvaIbApdEhl/exec'
+};
+/* ================================================== */
+
+const $ = id => document.getElementById(id);
+const T0 = Date.now();
+const eur = n => (Math.abs(n - Math.round(n)) < 0.005 ? Math.round(n) : n.toFixed(2).replace('.', ',')) + ' €';
+const TXT = { marca: CONFIG.marca, precio: eur(CONFIG.precioUnidad), precioOriginal: eur(CONFIG.precioOriginalUnidad),
+  envioTxt: eur(CONFIG.envio), max: CONFIG.maxUnidades, stock: CONFIG.stock,
+  totBcn: eur(CONFIG.precioUnidad), totEnvio: eur(CONFIG.precioUnidad + CONFIG.envio) };
+document.querySelectorAll('[data-cfg]').forEach(el => el.textContent = TXT[el.dataset.cfg]);
+function verImg(i){
+  const im = CONFIG.imagenes[i]; $('mainImg').src = im.src; $('mainImg').alt = im.alt;
+  [...$('thumbs').children].forEach((b, j) => b.setAttribute('aria-current', j === i));
+}
+CONFIG.imagenes.forEach((im, i) => {
+  const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', im.alt);
+  b.innerHTML = `<img src="${im.src}" alt="" loading="lazy">`; b.onclick = () => verImg(i); $('thumbs').appendChild(b);
+});
+verImg(0);
+
+/* --- Stock en vivo --- */
+let maxPedido = CONFIG.maxUnidades;
+function aplicarStock(disp){
+  if (disp == null) return;
+  if (disp <= 0) {
+    $('form').style.display = 'none'; $('sold').style.display = 'block';
+    $('stockHero').innerHTML = '<b>Agotadas</b>';
+    document.querySelectorAll('a[href="#pedir"]').forEach(a => a.textContent = 'Agotadas');
+    return;
+  }
+  const t = disp <= 10 ? `¡Solo quedan <b>${disp}</b>!` : `Quedan <b>${disp}</b> de ${CONFIG.stock}`;
+  $('stockHero').innerHTML = t; $('quedan').innerHTML = t;
+  maxPedido = Math.min(CONFIG.maxUnidades, disp);
+  if (cant > maxPedido) cant = maxPedido;
+  renderQty();
+}
+if (CONFIG.endpoint) fetch(CONFIG.endpoint).then(r => r.json()).then(r => aplicarStock(r.disponibles)).catch(() => {});
+
+/* --- Provincias --- */
+const PROV = {'01':'Álava','02':'Albacete','03':'Alicante','04':'Almería','05':'Ávila','06':'Badajoz','07':'Illes Balears','08':'Barcelona','09':'Burgos','10':'Cáceres','11':'Cádiz','12':'Castellón','13':'Ciudad Real','14':'Córdoba','15':'A Coruña','16':'Cuenca','17':'Girona','18':'Granada','19':'Guadalajara','20':'Gipuzkoa','21':'Huelva','22':'Huesca','23':'Jaén','24':'León','25':'Lleida','26':'La Rioja','27':'Lugo','28':'Madrid','29':'Málaga','30':'Murcia','31':'Navarra','32':'Ourense','33':'Asturias','34':'Palencia','35':'Las Palmas','36':'Pontevedra','37':'Salamanca','38':'Santa Cruz de Tenerife','39':'Cantabria','40':'Segovia','41':'Sevilla','42':'Soria','43':'Tarragona','44':'Teruel','45':'Toledo','46':'Valencia','47':'Valladolid','48':'Bizkaia','49':'Zamora','50':'Zaragoza','51':'Ceuta','52':'Melilla'};
+Object.values(PROV).sort((a,b)=>a.localeCompare(b,'es')).forEach(p => $('provincia').add(new Option(p, p)));
+$('cp').addEventListener('input', e => {
+  e.target.value = e.target.value.replace(/\D/g,'');
+  const p = PROV[e.target.value.slice(0,2)];
+  if (e.target.value.length >= 2 && p) { $('provincia').value = p; $('provincia').classList.remove('bad'); }
+});
+
+/* --- Cantidad, entrega y resumen --- */
+let cant = 1;
+const entrega = () => (document.querySelector('input[name=entrega]:checked') || {}).value;
+const vinculo = () => (document.querySelector('input[name=vinculo]:checked') || {}).value;
+const pideDireccion = () => true;
+function renderQty(){
+  $('cantOut').value = cant; $('cantidad').value = cant;
+  $('menos').disabled = cant <= 1; $('mas').disabled = cant >= maxPedido;
+  const sub = cant * CONFIG.precioUnidad, e = entrega();
+  const envio = e === 'envio' ? CONFIG.envio : 0;
+  const envTxt = e === 'envio' ? eur(CONFIG.envio) : e ? 'Gratis' : '—';
+  const envLbl = e === 'envio' ? 'Envío' : e === 'bcn' ? 'Recogida Barcelona' : 'Entrega';
+  $('summary').innerHTML = `<div><span>${cant} × ${eur(CONFIG.precioUnidad)}</span><span>${eur(sub)}</span></div><div><span>${envLbl}</span><span>${envTxt}</span></div><div class="tot"><span>Total</span><span>${eur(sub + envio)}</span></div>`;
+}
+function renderAddr(){
+  const show = pideDireccion();
+  $('addr').hidden = !show;
+  const env = entrega() === 'envio';
+  $('dirLabel').textContent = env ? 'Dirección de envío' : 'Dirección';
+  $('addrNote').style.display = env ? 'flex' : 'none';
+  $('addrNote').innerHTML = '🇪🇸 <span>Por logística, <b>solo enviamos a direcciones de España</b>.</span>';
+}
+$('menos').onclick = () => { cant = Math.max(1, cant - 1); renderQty(); };
+$('mas').onclick = () => { cant = Math.min(maxPedido, cant + 1); renderQty(); };
+document.querySelectorAll('input[name=entrega]').forEach(r => r.addEventListener('change', () => { $('entregaOpts').classList.remove('bad'); renderQty(); renderAddr(); }));
+document.querySelectorAll('input[name=vinculo]').forEach(r => r.addEventListener('change', () => $('vinculoOpts').classList.remove('bad')));
+renderQty(); renderAddr();
+
+/* --- Factura / DNI --- */
+function dniValido(v){
+  const m = /^([XYZ]?)(\d{7,8})([A-Z])$/.exec(v.toUpperCase().replace(/[\s-]/g,''));
+  if (!m) return false;
+  const n = parseInt(({X:'0',Y:'1',Z:'2'}[m[1]] || '') + m[2], 10);
+  return 'TRWAGMYFPDXBNJZSQVHLCKE'[n % 23] === m[3];
+}
+$('factura').addEventListener('change', e => { $('dniBox').style.display = e.target.checked ? 'block' : 'none'; if (!e.target.checked) $('dni').classList.remove('bad'); renderAddr(); });
+$('dni').addEventListener('blur', e => { if (e.target.value) e.target.classList.toggle('bad', !dniValido(e.target.value)); });
+async function copiarRef(){ try { await navigator.clipboard.writeText($('ref').textContent); $('copyRef').textContent = 'Copiado ✓'; } catch(_){} }
+$('copyRef').onclick = copiarRef;
+$('payBtn').addEventListener('click', copiarRef); // copia el código justo antes de abrir Revolut
+document.querySelectorAll('.cta[data-entrega]').forEach(a => a.addEventListener('click', () => {
+  const r = document.querySelector(`input[name=entrega][value=${a.dataset.entrega}]`); r.checked = true; r.dispatchEvent(new Event('change'));
+}));
+
+$('otra').onclick = () => {
+  $('done').style.display = 'none'; $('form').style.display = 'block';
+  const btn = $('submit'); btn.disabled = false; btn.textContent = 'Reservar mi mochila';
+  $('copyRef').textContent = 'Copiar';
+  $('pedir').scrollIntoView({behavior:'smooth'});
+};
+
+/* --- Validación --- */
+const rules = {
+  nombre: v => v.trim().length > 1,
+  apellidos: v => v.trim().length > 1,
+  email: v => /^\S+@\S+\.\S+$/.test(v.trim()),
+  telefono: v => v.replace(/[\s+\-()]/g,'').replace(/^0?0?34/,'').length >= 9,
+};
+const addrRules = {
+  direccion: v => v.trim().length > 5,
+  cp: v => /^(0[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(v),
+  ciudad: v => v.trim().length > 1,
+  provincia: v => !!v
+};
+function validate(){
+  let ok = true, first = null;
+  const fail = el => { ok = false; first = first || el; };
+  if (!vinculo()) { $('vinculoOpts').classList.add('bad'); fail($('vinculoOpts').querySelector('input')); }
+  if (!entrega()) { $('entregaOpts').classList.add('bad'); fail($('entregaOpts').querySelector('input')); }
+  const all = pideDireccion() ? { ...rules, ...addrRules } : rules;
+  for (const [k, fn] of Object.entries(all)) { const el = $(k), good = fn(el.value); el.classList.toggle('bad', !good); if (!good) fail(el); }
+  if ($('factura').checked && !dniValido($('dni').value)) { $('dni').classList.add('bad'); fail($('dni')); }
+  for (const k of ['alumno','rgpd']) { const el = $(k); el.closest('.check').classList.toggle('bad', !el.checked); if (!el.checked) fail(el); }
+  if (first) first.focus();
+  return ok;
+}
+Object.entries({ ...rules, ...addrRules }).forEach(([k, fn]) => $(k).addEventListener('blur', e => { if (e.target.value) e.target.classList.toggle('bad', !fn(e.target.value)); }));
+// quita el error en cuanto el dato es válido (evita saltos de maquetación al hacer clic en otro sitio)
+Object.entries({ ...rules, ...addrRules }).forEach(([k, fn]) => $(k).addEventListener(k === 'provincia' ? 'change' : 'input', e => { if (e.target.classList.contains('bad') && fn(e.target.value)) e.target.classList.remove('bad'); }));
+$('dni').addEventListener('input', e => { if (e.target.classList.contains('bad') && dniValido(e.target.value)) e.target.classList.remove('bad'); });
+['alumno','rgpd'].forEach(k => $(k).addEventListener('change', e => e.target.closest('.check').classList.toggle('bad', !e.target.checked)));
+
+/* --- Envío --- */
+$('form').addEventListener('submit', async e => {
+  e.preventDefault();
+  $('alert').style.display = 'none';
+  if (!validate()) return;
+  const btn = $('submit'); btn.disabled = true; btn.textContent = 'Enviando…';
+  const data = Object.fromEntries(new FormData(e.target));
+  data.t = Date.now() - T0;  // anti-spam: tiempo en la página
+  data.factura = $('factura').checked ? 'si' : 'no';
+  try {
+    if (!CONFIG.endpoint) throw new Error('Formulario no configurado todavía (falta endpoint).');
+    const r = await fetch(CONFIG.endpoint, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data) });
+    const res = await r.json();
+    if (!res.ok) { if (res.disponibles != null) aplicarStock(res.disponibles); throw new Error(res.error || 'No se pudo enviar.'); }
+    $('ref').textContent = res.ref;
+    $('doneTotal').textContent = eur(Number(res.importe));
+    $('payBtn').href = entrega() === 'envio' ? CONFIG.pagoEnvio : CONFIG.pagoBcn;
+    $('payBtn').textContent = `Copiar código y pagar ${eur(Number(res.importe))} →`;
+    $('form').style.display = 'none';
+    $('done').style.display = 'block';
+    $('pedir').scrollIntoView({behavior:'smooth'});
+  } catch (err) {
+    $('alert').textContent = err.message || 'Error de conexión. Inténtalo de nuevo.';
+    $('alert').style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Reservar mi mochila';
+  }
+});
+</script>
+</body>
+</html>
