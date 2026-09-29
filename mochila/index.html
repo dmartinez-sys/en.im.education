@@ -424,7 +424,7 @@ function aplicarStock(disp){
     document.querySelectorAll('a[href="#pedir"]').forEach(a => a.textContent = 'Agotadas');
     return;
   }
-  const t = disp <= 15 ? `🔥 ¡Últimas <b>${disp}</b> mochilas!` : `Quedan <b>${disp}</b> de ${CONFIG.stock}`;
+  const t = disp <= 15 ? `🔥 ¡Últimas <b>${disp}</b> mochilas!` : `Edición limitada · solo quedan <b>${disp}</b>`;
   $('stockHero').innerHTML = t; $('quedan').innerHTML = t;
   maxPedido = Math.min(CONFIG.maxUnidades, disp);
   if (cant > maxPedido) cant = maxPedido;
