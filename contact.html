@@ -328,7 +328,7 @@ document.getElementById("lead-form").addEventListener("submit", function(e){
   params.set("id_curso", sel.value);
   params.set("nombre", f.nombre.value.trim());
   params.set("email", f.email.value.trim());
-  params.set("telefono", f.telefono.value.trim());
+  params.set("telefono1", f.telefono.value.trim());
   btn.disabled = true; btn.textContent = "Sending...";
   fetch(CRM_CONFIG.base + "?" + params.toString(), {method:"GET", mode:"no-cors"})
     .finally(function(){
